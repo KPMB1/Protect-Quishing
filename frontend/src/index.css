@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Fira Code', monospace;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #050811;
+  color: #f1f5f9;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 100% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+}
+
+/* Custom Cyber Animations */
+@keyframes cyberScan {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 96%;
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+.animate-scan-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #00f2fe, #00c6ff, transparent);
+  box-shadow: 0 0 15px #00f2fe, 0 0 30px #00c6ff;
+  animation: cyberScan 2.5s ease-in-out infinite alternate;
+}
+
+.cyber-glow-blue {
+  box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.25);
+}
+
+.cyber-glow-green {
+  box-shadow: 0 0 30px -5px rgba(34, 197, 94, 0.3);
+}
+
+.cyber-glow-red {
+  box-shadow: 0 0 30px -5px rgba(239, 68, 68, 0.35);
+}
+
+.cyber-glow-orange {
+  box-shadow: 0 0 30px -5px rgba(249, 115, 22, 0.35);
+}
+
+.cyber-card {
+  background: rgba(13, 20, 36, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 1rem;
+}
+
+.cyber-card:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090d1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
